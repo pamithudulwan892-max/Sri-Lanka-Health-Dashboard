@@ -1,0 +1,44 @@
+# How Sri Lanka's Health Changed Over 50 Years
+
+An analysis and interactive dashboard of World Health Organization data on Sri Lanka's health from 1951 to 2019.
+
+** Live dashboard:** [add your Streamlit link here]
+
+## The question
+Sri Lanka is known for strong public health results for a lower-middle-income country. But did new health problems grow while child deaths fell?
+
+## Key findings
+- **Child deaths fell by about 95%.** Under-5 mortality dropped from about 132 per 1,000 births (1951) to about 7 (2019).
+- **Vaccination reached almost everyone.** DTP3 coverage rose from 46% (1980) to 99% (2019).
+- **Lifestyle diseases kept rising.** Adult overweight rose from 7% to 23% (1975–2016), and adult obesity grew about 9 times.
+- **Women and men differ.** Obesity is much higher among women; high blood pressure is higher among men.
+- **The 2004 tsunami** shows up as a clear spike in child mortality.
+
+## Data
+- Source: WHO Global Health Observatory – Sri Lanka health indicators (via HDX)
+- 10 indicators selected from 1,360, covering 1951–2019
+
+## Method
+1. Cleaned the raw WHO file (removed the tag row, kept 4 columns, fixed data types)
+2. Selected and renamed 10 indicators in 3 themes
+3. Pivoted the data to compare indicators over time
+4. Visualised trends with Matplotlib and built an interactive dashboard with Streamlit and Plotly
+
+## Tools
+Python · Pandas · Matplotlib · Plotly · Streamlit
+
+## Limitations
+- Most WHO data ends in 2016–2019, so COVID-19 and the 2022 economic crisis are not covered.
+- Values like obesity are WHO model estimates, not direct counts.
+
+## How to run
+pip install -r requirements.txt
+streamlit run app.py
+
+## Files
+| File | What it does |
+|---|---|
+| `sri_lanka_health_analysis.ipynb` | Data cleaning, analysis and charts |
+| `sri_lanka_health_clean.csv` | Clean data created by the notebook |
+| `app.py` | The Streamlit dashboard |
+| `requirements.txt` | Python libraries the app needs |
